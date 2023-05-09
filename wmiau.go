@@ -223,6 +223,9 @@ func (s *server) startClient(userID int, textjid string, token string, subscript
 	if *waDebug == "DEBUG" {
 		clientHttp[userID].SetDebug(true)
 	}
+	if *authToken != "" {
+		clientHttp[userID].SetHeader("Authorization", "Token "+*authToken)
+	}
 	clientHttp[userID].SetTimeout(5 * time.Second)
 
 	if client.Store.ID == nil {

@@ -32,6 +32,7 @@ var (
 	logType    = flag.String("logtype", "console", "Type of log output (console or json)")
 	sslcert    = flag.String("sslcertificate", "", "SSL Certificate File")
 	sslprivkey = flag.String("sslprivatekey", "", "SSL Certificate Private Key File")
+	authToken  = flag.String("authtoken", "", "Authentication Token to pass to Webhooks")
 	container  *sqlstore.Container
 
 	killchannel   = make(map[int](chan bool))
